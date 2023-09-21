@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<div class="container" style="margin-bottom:3.9rem;">
+    <div class="row" >
+        <div class="col-12" style="z-index: -1;"> 
+            <h1 style="text-align: center;">Doação</h1>
+            <h4 style="text-align: center;">Contribua para a nossa causa ^-^</h4>
+            <form id="formL" style="background-color: white; margin-top: 3rem;" action="." method="post" autocomplete="off">
+                <img id="logoLogin" src="{% static 'img/happyhappyhappy cat.gif' %}" alt="Cat Image" class="d-inline-block      align-text-top">
+                <div class="form-group">
+                  <label for="valor">Valor</label>
+                  <div class="input-group">
+                      <span class="input-group-text">R$</span>
+                      <input type="number" name="valor" id="valor" placeholder="Digite o valor" class="form-control">
+                  </div>
+              </div>
+                <div class="form-group">
+                    <label for="inputDoar">Escolher forma de pagamento.</label>
+                    <select id="inputDoar" class="form-control">
+                        <option selected>Escolher</option>
+                        <option>PIX</option>
+                        <option>Boleto bancário</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm">Doar</button>
+            </form>
+        </div>
+    </div>
+</div>
+</html>
+
+{% endblock %}
