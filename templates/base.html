@@ -27,6 +27,9 @@
       <li><a class="J" href="{% url 'accounts:catalogo' %}">Catalogo</a></li>
       <li><a class="J" href="{% url 'accounts:rifas' %}">Rifa</a></li>
       <li><a class="J" href="{% url 'accounts:doacao' %}">Doação</a></li>
+      {% if user.is_staff %}
+        <li><a class="J" href="/admin" target="_blank">Admin</a></li>
+      {% endif %}
       <li class="nav-item" style="color:white; margin-top: 2.145rem;">
         {% if user.is_authenticated %}
           Bem-vindo, {{ user.username }}!
