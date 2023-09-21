@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'img/lacat2.ico' %}" type="image/x-icon">
+    <title>La Bufa Cats</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- NavBar -->
+  <nav style="z-index: 1;">
+    <div class="mobile-menu">
+      <br>
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+      </div>
+    </div>
+    <ul class="nav-list">
+      <li><img src="{% static 'img/Logolabufacats.png' %}"  style="width: 15rem; margin-top: 0rem;"></li>
+      <li><a class="J" href="{% url 'accounts:index' %}">Home</a></li>
+      <li><a class="J" href="{% url 'accounts:catalogo' %}">Catalogo</a></li>
+      <li><a class="J" href="{% url 'accounts:rifas' %}">Rifa</a></li>
+      <li><a class="J" href="{% url 'accounts:doacao' %}">Doação</a></li>
+      <li class="nav-item" style="color:white; margin-top: 2.145rem;">
+        {% if user.is_authenticated %}
+          Bem-vindo, {{ user.username }}!
+      </li>
+          {% else %}
+      <li class="nav-item" style="margin-left:7rem; margin-top:-1rem;">
+          <a class="nav-link active" aria-current="page" href="{% url 'accounts:user_login' %}"><button id="botaoLoginH">Login<div class="arrow-wrapper"><div class="arrow"></div></div></button></a>
+      </li>
+      <li class="nav-item" style="margin-left:5rem; margin-top:-1rem;">
+          <a class="nav-link active" aria-current="page" href="{% url 'accounts:home' %}"><button id="botaoLoginH">Cadastre-se<div class="arrow-wrapper"><div class="arrow"></div></div></button></a>
+      </li>
+            <!-- Outros elementos HTML para usuários não logados -->
+        {% endif %}
+      </li>
+    </ul>
+  </nav>
+<!-- Mensagens  -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-12 col-xl-12">
+        {% if messages %}
+        <div class="col-12 alert alert-dismissible fade show bg-danger text-white auto-dismiss" role="alert" data-auto-dismiss="2500" style="background-color: #ff6b6b; margin-top: 3rem; color: white; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+          <ul class="messages">
+            {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+<!-- Footer -->
+  <div class="footer" style="position: fixed; bottom: 0; left: 0; right: 0; padding: 10px; background-color: #09b9d8; text-align: center; background: linear-gradient(to right, #04415e, #2cc6f5); color: white;">
+    <p>&copy; 2023 La Bufa.inc Todos os direitos reservados.</p>
+  </div>
+
+<button id="rotateButton" style="border: none; background: none; cursor: pointer;">
+  <img src={% static 'img/maxwell-cat.gif' %} alt="GIF" style="position: fixed; bottom: 0; right: 0; margin: 5px; width: 80px;">
+</button>
+
+{% block body %}
+{% endblock%}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>

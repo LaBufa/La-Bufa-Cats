@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="shortcut icon" href="img/lacat2.ico" type="image/x-icon">
+    <title>Login</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-xl bg-body-tertiary">
+        <img src="img/Logolabufacats.png"  style="width: 150px;">
+    </nav>
+    <div class="login-container">
+      <form id="formL" style="background-color: white; margin-top: 1.7rem;">
+        <img id="logoLogin" src="img/Logolabufacats.png" alt="Logo" width="50" class="d-inline-block align-text-top">
+        <a style="font-size: 30px;"> </a>
+        <input placeholder="Usuário" style="font-size: 15px;" type="text" id="nomeLogin" name="username" required>
+        <input placeholder="Senha" style="font-size: 15px;" type="password" id="senhaLogin" name="password" required>
+        <a href="index.html"> <button type="button" class="btn btn-outline-light" style="background-color: rgb(0, 133, 150);" id="botaoLogin">Entrar</button> </a> 
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    </body>
+    </html>
+    
+</body>
+</html>

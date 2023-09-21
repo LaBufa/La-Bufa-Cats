@@ -1,0 +1,368 @@
+body {
+    background: linear-gradient(to right, #04415e, #2cc6f5);
+    overflow-x: hidden;
+}
+
+/* nova nav bar */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.J{
+    color: white;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 5px;
+    border-radius: 30px;
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    margin-top:2rem;
+}
+
+.J:hover{
+    color: #04415e;
+    background-color: #2cc6f5;
+    transition: all 300ms;
+    scale: 1.1;
+}
+
+.logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+/* NavBar*/
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background: #04415e;
+    height: 8vh;
+    padding-bottom: 6.3rem;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+@media (max-width: 999px) {
+    .nav-list {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background: #04415e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+    .mobile-menu {
+        display: block;
+    }
+}
+
+.nav-list.active {
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+    opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+
+/**/
+.footer {
+    background-color: #09b9d8;
+    text-align: center;
+    padding: 20px;
+    }
+
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/** Login **/
+#nomeLogin{
+    margin-bottom: 1.4rem;
+}
+#senhaLogin{
+    margin-bottom: 1.4rem;
+}
+
+#botaoLogin{
+    margin-left: 36%;
+    background-color: #2cc6f5;
+}
+
+#botaoLogin:hover {
+    background-color: #04415e;
+    color: white;
+}
+
+#logoLogin{
+    margin-left:-10%;
+    width: 18rem;
+}
+
+#formL {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    
+    border-radius: 10px;
+}
+
+/** Cadastro **/
+
+#linha1Cadastro{
+    margin-top: 10rem;
+}
+
+#imgLinha1Cadastro{
+    margin-top: 3.2rem;
+}
+
+#formC {
+    width: 300px;
+
+    padding: 20px;
+
+    border-radius: 10px;
+}
+
+#botaoCadastro{
+    margin-left: 36%;
+}
+
+#log1{
+    margin-bottom: 3.5rem;
+    color: white;
+}
+
+/** index **/
+
+#navhome1{
+    /**vo editar no note mais tarde **/
+    margin-bottom: 10px;
+}
+
+/** Rifa **/
+
+#numbers-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.number-button {
+    margin: 5px;
+    width: 4rem;
+    transition: 500ms;
+}
+
+.number-button:hover{
+    margin: 5px;
+    width: 4rem;
+    scale: 1.1;
+    
+}
+
+.selected-number {
+    font-size: 1.2rem; /* Ajuste o tamanho da fonte conforme necessário */
+}
+
+.confirmed {
+    background-color: red !important;
+    color: white !important;
+}
+
+/* Botão de Login na navbar*/
+
+#botaoLoginH {
+    --primary-color: #04415e;
+    --secondary-color: #fff;
+    --hover-color: #2cc6f5;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    margin-left: -9.3rem;
+    margin-top: 2.145rem;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: #fff;
+    padding: 0.4rem 1rem;
+    background: #04415e;
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+}
+
+#botaoLoginH .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#botaoLoginH .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: #04415e;
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+}
+
+#botaoLoginH .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid #fff;
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+}
+
+#botaoLoginH:hover {
+    background-color: #2cc6f5;
+}
+
+#botaoLoginH:hover .arrow {
+    background: #fff;
+}
+
+#botaoLoginH:hover .arrow:before {
+    right: 0;
+}
+
+/* scrollbar */
+/* Estilo para a parte da barra de rolagem */
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+/* Estilo para o traço da barra de rolagem */
+::-webkit-scrollbar-thumb {
+    background-color: #2cc6f5; /* Cor do traço da barra de rolagem */
+    border-radius: 6px; /* Borda arredondada do traço */
+}
+
+/* Estilo para a pista (fundo) da barra de rolagem */
+::-webkit-scrollbar-track {
+    background-color: #04415e; /* Cor de fundo da pista */
+}
+
+/* Estilo para o canto da barra de rolagem */
+::-webkit-scrollbar-corner {
+    background-color: #04415e; /* Cor do canto */
+}
+
+
+#linha_index
+{
+    margin-right:0.1rem; 
+    margin-left:0.1rem; 
+    margin-top:2rem; 
+    margin-bottom:2rem; 
+    background-image: url('/static/img/gatos-background5.jpeg');
+    object-fit:cover; 
+    background-size: cover;
+    border-radius: 20px;
+}
+
+#linha_index3
+{
+    margin-right:0.1rem; 
+    margin-left:0.1rem; 
+    margin-top:2rem; 
+    margin-bottom:2rem; 
+    background-image: url('/static/img/gatos-background2.jpeg'); 
+    background-size: cover;
+    border-radius: 20px;
+}
+
+#linha_index2
+{
+    margin-right:0.1rem; 
+    margin-left:0.1rem; 
+    margin-top:2rem; 
+    margin-bottom:2rem; 
+    background-image: url('/static/img/gatos-background3.jpeg'); 
+    background-size: cover;
+    border-radius: 20px;
+}
