@@ -3,6 +3,10 @@ body {
     overflow-x: hidden;
 }
 
+#mensagem{
+    background-color: rgb(23, 167, 23);
+}
+
 /* nova nav bar */
 * {
     margin: 0;
@@ -311,7 +315,7 @@ input[type="submit"] {
 }
 
 /* scrollbar */
-/* Estilo para a parte da barra de rolagem */
+
 ::-webkit-scrollbar {
     width: 12px; /* Largura da barra de rolagem */
 }

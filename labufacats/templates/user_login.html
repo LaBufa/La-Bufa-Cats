@@ -43,7 +43,7 @@
 
 <div class="login-container" style="" >
     <form  id="formL" style="background-color: white; margin-top: 8rem;" action="." method="post" autocomplete="off">
-        <img id="logoLogin" src="{% static 'img/Logolabufacats.png' %}" th="50" class="d-inline-block align-text-top">
+        <a href="{% url 'accounts:index' %}"><img id="logoLogin" src="{% static 'img/Logolabufacats.png' %}" th="50" class="d-inline-block align-text-top"></a>
         {% csrf_token %}
         <input type="text" name="username" placeholder="Usuário ou e-mail" style="font-size: 15px;" id="nomeLogin">
         <input type="password" name="password" placeholder="Senha" style="font-size: 15px;" id="senhaLogin">

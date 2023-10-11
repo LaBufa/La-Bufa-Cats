@@ -31,6 +31,9 @@
         {% if user.is_authenticated %}
           Bem-vindo, {{ user.username }}!
       </li>
+      <li class="nav-item" style="margin-left:8.7rem; margin-top:-1rem;">
+        <a class="nav-link active" aria-current="page" href="{% url 'accounts:user_logout' %}"><button id="botaoLoginH">Logout<div class="arrow-wrapper"><div class="arrow"></div></div></button></a>
+      </li>
           {% else %}
       <li class="nav-item" style="margin-left:7rem; margin-top:-1rem;">
           <a class="nav-link active" aria-current="page" href="{% url 'accounts:user_login' %}"><button id="botaoLoginH">Login<div class="arrow-wrapper"><div class="arrow"></div></div></button></a>
@@ -44,11 +47,10 @@
     </ul>
   </nav>
 <!-- Mensagens  -->
-  <div class="container">
     <div class="row">
       <div class="col-12 col-md-12 col-xl-12">
         {% if messages %}
-        <div class="col-12 alert alert-dismissible fade show bg-danger text-white auto-dismiss" role="alert" data-auto-dismiss="2500" style="background-color: #ff6b6b; margin-top: 3rem; color: white; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+        <div class="col-12 alert alert-success fade show bg-success text-white auto-dismiss" id="mensagem" role="alert" data-auto-dismiss="2500" style="background-color: #10eb59; margin-top: 3rem; color: white; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
           <ul class="messages">
             {% for message in messages %}
               <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
@@ -57,7 +59,6 @@
         {% endif %}
       </div>
     </div>
-  </div>
 <!-- Footer -->
   <div class="footer" style="position: fixed; bottom: 0; left: 0; right: 0; padding: 10px; background-color: #09b9d8; text-align: center; background: linear-gradient(to right, #04415e, #2cc6f5); color: white;">
     <p>&copy; 2023 La Bufa.inc Todos os direitos reservados.</p>
