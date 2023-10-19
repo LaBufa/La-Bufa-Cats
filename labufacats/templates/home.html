@@ -12,33 +12,32 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
-<body>
+<body style="background-image: url('/static/img/gato_cadastro.jpg'); 
+background-size: cover; 
+background-repeat: no-repeat; 
+margin: 0; 
+margin: 0;">
   <main>
-    <div class="container">
-        <div class="row" id="linha1Cadastro"  style="margin-top: 1.6rem;">
-
-            <div class="col-md-9" >
-                <a href="{% url 'accounts:index' %}"><img src="{% static 'img/Logolabufacats.png' %}" style="width: 500px;" alt="" id="imgLinha1Cadastro"></a>
+    <div class="container"style="">
+        <div class="row" id="linha1Cadastro"  >
+            <div class="col-md-9 col-lg-9 col-12" >
+                <img src="{% static 'img/Logolabufacats.png' %}" style="width: 500px;" alt="" id="imgLinha1Cadastro">
             </div>
 
-            <div class="col-md-3" id="direita" >
-                <h3 style="color: white;">
+            <div style="background-color: #008698; border-radius:20px; color: white;" class="col-md-3" id="direita" >
+                <h3 class="text-center" style="color: white; margin-top:10px;">
                     Para realizarmos seu cadastro precisamos de algumas informações
                 </h3>
-                <form action="" method="post" id="formC">
+                <form class="text-center" action="" method="post" id="formC">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button type="submit" id="botaoCadastro" class="btn btn-outline-light">Criar conta</button>
-                    <p><a href="{% url 'accounts:user_login' %}" id="log1" style="margin-top: 1rem;">Já é cadastrado? faça seu login aqui</a></p>
+                    <button  type="submit" id="botaoCadastro" class="btn btn-outline-dark text-center" style="color:white;">Criar conta</button>
+                    <p><a href="{% url 'accounts:user_login' %}" id="log1" style=" color: white;margin-top: 1rem;">Já é cadastrado? faça seu login aqui</a></p>
                 </form>
             </div>
         </div>
     </div>
   </main>
-  <footer>
-    <!-- place footer here -->
-  </footer>
-  <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>
