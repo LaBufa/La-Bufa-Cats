@@ -9,6 +9,7 @@ from .forms import UserForm
 from .models import Post
 
 
+
 class NotFoundView(View):
     def get(self, request, path):
         return HttpResponseNotFound("Página não encontrada.")

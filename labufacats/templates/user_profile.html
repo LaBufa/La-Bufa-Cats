@@ -2,8 +2,18 @@
 {% load static %}
 {% block body %}
 
-<h1 style="display:flex; align-items:center; justify-content: center; color: white;">Essa é sua página de perfil</h1>
-</html>
+{% if user.is_authenticated %}
 
+
+<h1 style="display:flex; align-items:center; justify-content: center; color: white;">Essa é sua página de perfil</h1>
+
+<h4 style="display:flex; padding-left: 6.3rem; color: white;">Seu nome completo : {{ user.first_name }}</h4>
+<h4 style="display:flex; padding-left: 6.3rem; color: white;">Seu nome de usuario : {{ user.username }}</h4>
+<h4 style="display:flex; padding-left: 6.3rem; color: white;">Seu E-mail : {{ user.email }}</h4>
+</html>
+{% else %}
+<h1 style="display:flex; align-items:center; justify-content: center; color: white;">Oops . . . Você não está logado!</h1>
+
+{% endif %}
 
 {% endblock %}

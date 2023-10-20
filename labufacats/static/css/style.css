@@ -32,6 +32,7 @@ a {
     background-color: #2cc6f5;
     transition: all 300ms;
     scale: 1.1;
+    text-decoration: none;
 }
 
 .logo {
@@ -39,8 +40,6 @@ a {
     text-transform: uppercase;
     letter-spacing: 4px;
 }
-
-/* NavBar*/
 
 nav {
     display: flex;
