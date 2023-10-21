@@ -24,12 +24,12 @@
     <ul class="nav-list">
       <li><img src="{% static 'img/Logolabufacats.png' %}"  style="width: 15rem; margin-top: 0rem;"></li>
       <li><a class="J" href="{% url 'accounts:index' %}">Home</a></li>
-      <li><a class="J" href="{% url 'accounts:catalogo' %}">Catalogo</a></li>
+      <li><a class="J" href="{% url 'accounts:catalogo' %}">Catálogo</a></li>
       <li><a class="J" href="{% url 'accounts:rifas' %}">Rifa</a></li>
       <li><a class="J" href="{% url 'accounts:doacao' %}">Doação</a></li>
       <li style="color:white; margin-top: 2.145rem;">
         {% if user.is_authenticated %}
-          Bem-vindo, {{ user.username }}!
+          Bem-vindo(a), {{ user.username }}!
       </li>
       <li class="nav-item" style="margin-left:8.7rem; margin-top:-1rem;">
         <a class="nav-link active" aria-current="page" href="{% url 'accounts:user_logout' %}"><button id="botaoLoginH">Logout<div class="arrow-wrapper"><div class="arrow"></div></div></button></a>
