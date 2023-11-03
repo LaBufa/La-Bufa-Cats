@@ -13,15 +13,14 @@
 </head>
 <body>
 <!-- NavBar -->
-  <nav style="z-index: 1;">
+  <nav>
     <div class="mobile-menu">
       <br>
       <div class="line1"></div>
       <div class="line2"></div>
       <div class="line3"></div>
-      </div>
     </div>
-    <ul class="nav-list">
+    <ul class="nav-list" style="z-index: 1;">
       <li><img src="{% static 'img/Logolabufacats.png' %}"  style="width: 15rem; margin-top: 0rem;"></li>
       <li><a class="J" href="{% url 'accounts:index' %}">Home</a></li>
       <li><a class="J" href="{% url 'accounts:catalogo' %}">Catálogo</a></li>

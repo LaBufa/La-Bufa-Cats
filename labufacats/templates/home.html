@@ -32,7 +32,7 @@ margin: 0;">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <button  type="submit" id="botaoCadastro" class="btn btn-outline-dark text-center" style="color:white;">Criar conta</button>
-                    <p><a href="{% url 'accounts:user_login' %}" id="log1" style=" color: white;margin-top: 1rem;">Já é cadastrado? faça seu login aqui</a></p>
+                    <p><a href="{% url 'accounts:user_login' %}" id="log1" style=" color: white;margin-top: 1rem;">Já é cadastrado? <i class="loginText">faça seu login aqui</i></a></p>
                 </form>
             </div>
         </div>

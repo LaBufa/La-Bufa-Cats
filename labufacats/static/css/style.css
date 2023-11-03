@@ -211,6 +211,10 @@ input[type="submit"] {
     color: white;
 }
 
+.loginText:hover{
+    text-decoration: underline;
+}
+
 /* Index */
 #navhome1 {
     /**vo editar no note mais tarde **/

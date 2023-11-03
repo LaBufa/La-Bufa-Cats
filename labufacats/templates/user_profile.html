@@ -4,8 +4,46 @@
 
 {% if user.is_authenticated %}
 
+<div class="container" style="color: white;">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-2">
+            <img src="{% static 'img/lacat2.ico' %}" alt="" style="width: 8.7rem;">
+        </div>
 
-<h1 style="display:flex; align-items:center; justify-content: center; color: white;">Essa é sua página de perfil</h1>
+        <div class="col-12 col-md-6 col-lg-10">
+            <h5>Nome: {{ user.first_name }}</h5>
+            <h6>Nome de Usuario: {{ user.username }}</h6>
+            <h6>Gatos adotados: </h6>
+            <h6>Sobre o Usuário: </h6>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-12">
+            <h1 style="display:flex; align-items:center; justify-content: center; color: white;">Seus gatos Favoritos</h1>
+        </div>
+    </div>
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-12 col-md-4 col-xl-4">
+            <div class="card" id="cardH1" style= "margin-top: 1rem;" style="object-fit: content;">
+                <img src={{ post.img.url }} style="max-height: 17rem; max-width: 27rem; object-fit: content;">
+                <div class="card-body">
+                    <li>
+                        <h2>{{ post.titulo_post }}</h2>
+                        <p>{{ post.descricao_post }}</p>
+                        <a href="{% url 'accounts:detalhes' post.id %}" class="btn btn-primary">Detalhes</a>
+                    </li>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">{{ post.data_post }}</small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
 
 <h4 style="display:flex; padding-left: 6.3rem; color: white;">Seu nome completo : {{ user.first_name }}</h4>
 <h4 style="display:flex; padding-left: 6.3rem; color: white;">Seu nome de usuario : {{ user.username }}</h4>
