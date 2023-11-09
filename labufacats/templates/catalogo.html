@@ -5,25 +5,17 @@
         <div class="row">
             {% for post in posts %}
             <div class="col-12 col-md-4 col-xl-4">
-
-
                 <div class="card" id="cardH1" style= "margin-top: 1rem;" style="object-fit: content;">
-                    <img src={{ post.img.url }} style="max-height: 17rem; max-width: 27rem; object-fit: content;">
-                    <div class="card-body">
-                        
-                        <li>
+                    <img src={{ post.img.url }} style="max-height: 17rem; max-width: 27rem; height: 17rem; object-fit: cover; border-radius: 10% 10% 0% 0%;">
+                    <div class="card-body" style="color: white; height: 14rem;">
                             <h2>{{ post.titulo_post }}</h2>
                             <p>{{ post.descricao_post }}</p>
                             <a href="{% url 'accounts:detalhes' post.id %}" class="btn btn-primary">Detalhes</a>
-                        </li>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">{{ post.data_post }}</small>
+                    <div class="card-footer" style="color: white;">
+                        <small class="">{{ post.data_post }}</small>
                     </div>
                 </div>
-
-
-
             </div>
             {% endfor %}
         </div>

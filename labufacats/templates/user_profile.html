@@ -22,36 +22,11 @@
             <h1 style="display:flex; align-items:center; justify-content: center; color: white;">Seus gatos Favoritos</h1>
         </div>
     </div>
-    <div class="row">
-        {% for post in posts %}
-        <div class="col-12 col-md-4 col-xl-4">
-            <div class="card" id="cardH1" style= "margin-top: 1rem;" style="object-fit: content;">
-                <img src={{ post.img.url }} style="max-height: 17rem; max-width: 27rem; object-fit: content;">
-                <div class="card-body">
-                    <li>
-                        <h2>{{ post.titulo_post }}</h2>
-                        <p>{{ post.descricao_post }}</p>
-                        <a href="{% url 'accounts:detalhes' post.id %}" class="btn btn-primary">Detalhes</a>
-                    </li>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">{{ post.data_post }}</small>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
 </div>
 
-
-
-<h4 style="display:flex; padding-left: 6.3rem; color: white;">Seu nome completo : {{ user.first_name }}</h4>
-<h4 style="display:flex; padding-left: 6.3rem; color: white;">Seu nome de usuario : {{ user.username }}</h4>
-<h4 style="display:flex; padding-left: 6.3rem; color: white;">Seu E-mail : {{ user.email }}</h4>
-</html>
 {% else %}
 <h1 style="display:flex; align-items:center; justify-content: center; color: white;">Oops . . . Você não está logado!</h1>
-
+</html>
 {% endif %}
 
 {% endblock %}
