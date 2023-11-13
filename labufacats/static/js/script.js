@@ -88,11 +88,11 @@ function clearSelections() {
 
 class MobileNavbar {
     constructor(mobileMenu, navList, navLinks) {
-      this.mobileMenu = document.querySelector(mobileMenu);
-      this.navList = document.querySelector(navList);
-      this.navLinks = document.querySelectorAll(navLinks);
-      this.activeClass = "active";
-      this.handleClick = this.handleClick.bind(this);
+        this.mobileMenu = document.querySelector(mobileMenu);
+        this.navList = document.querySelector(navList);
+        this.navLinks = document.querySelectorAll(navLinks);
+        this.activeClass = "active";
+        this.handleClick = this.handleClick.bind(this);
     }
 
     animateLinks() {
@@ -106,29 +106,29 @@ class MobileNavbar {
     }
 
     handleClick() {
-      this.navList.classList.toggle(this.activeClass);
-      this.mobileMenu.classList.toggle(this.activeClass);
-      this.animateLinks();
+        this.navList.classList.toggle(this.activeClass);
+        this.mobileMenu.classList.toggle(this.activeClass);
+        this.animateLinks();
     }
 
     addClickEvent() {
-      this.mobileMenu.addEventListener("click", this.handleClick);
+        this.mobileMenu.addEventListener("click", this.handleClick);
     }
 
     init() {
-      if (this.mobileMenu) {
+        if (this.mobileMenu) {
         this.addClickEvent();
-      }
-      return this;
+        }
+        return this;
     }
-  }
+    }
 
-  const mobileNavbar = new MobileNavbar(
-    ".mobile-menu",
-    ".nav-list",
-    ".nav-list li",
-  );
-  mobileNavbar.init();
+    const mobileNavbar = new MobileNavbar(
+        ".mobile-menu",
+        ".nav-list",
+        ".nav-list li",
+    );
+    mobileNavbar.init();
     // Função para fechar automaticamente as mensagens após um determinado tempo
     document.addEventListener('DOMContentLoaded', function() {
         const autoDismissElements = document.querySelectorAll('.auto-dismiss');
@@ -139,5 +139,36 @@ class MobileNavbar {
             }, autoDismissTime);
         });
     });
+
+
+// Favoritos
+function handleStarClick() {
+    var starIcon = document.getElementById("star-icon");
+
+    // Se a cor for branca, pergunte se o usuário deseja adicionar aos favoritos
+    if (starIcon.style.color === "white") {
+        var confirmation = confirm("Você deseja adicionar esse gato aos favoritos?");
+
+        // Se o usuário confirmar, alterar a cor para amarelo
+        if (confirmation) {
+            starIcon.style.color = "yellow";
+        }
+    }
+    // Se a cor for amarela, pergunte se o usuário deseja remover dos favoritos
+    else if (starIcon.style.color === "yellow") {
+        var confirmation = confirm("Você deseja remover esse gato dos favoritos?");
+
+        // Se o usuário confirmar, alterar a cor de volta para branca
+        if (confirmation) {
+            starIcon.style.color = "white";
+        }
+    }
+}
+
+// Adicionar um ouvinte de eventos para o clique no ícone de estrela
+document.getElementById("star-icon").addEventListener("click", handleStarClick);
+
 // Chame a função de carregamento assim que a página carregar
 window.onload = loadSelections;
+
+
