@@ -19,3 +19,10 @@ class UserForm(forms.ModelForm):
 
         self.fields['username'].help_text = ''
     
+class AdocaoForm(forms.Form):
+    nome = forms.CharField(max_length=100)
+    idade = forms.CharField(max_length=20)
+    email = forms.EmailField()
+    telefone = forms.CharField(max_length=15)
+    motivacao = forms.CharField(widget=forms.Textarea)
+    concordo = forms.BooleanField()

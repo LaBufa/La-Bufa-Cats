@@ -339,8 +339,8 @@ input[type="submit"] {
 ::selection {
     background-color: #a912bd; /* Cor de fundo da seleção */
     color: #ffffff; /* Cor do texto na seleção */
-  }
-  
+}
+
 
 #linha_index {
     margin-right: 0.1rem;

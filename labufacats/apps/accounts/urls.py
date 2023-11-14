@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import processar_formulario
+
 
 app_name = 'accounts'
 
@@ -13,6 +15,7 @@ urlpatterns = [
     path('catalogo/', views.CatalogoView.as_view(), name='catalogo'),
     path('<int:pk>/', views.DetalhesView.as_view(), name='detalhes'),
     path('<int:pk>/adocao', views.AdocaoView.as_view(), name='adocao'),
+    path('processar_formulario/', processar_formulario, name='processar_formulario'),
     path('index/', views.PrincipalView.as_view(), name='index'),
     path('rifas/', views.RifasView.as_view(), name='rifas'),
     path('doacao/', views.DoacaoView.as_view(), name='doacao'),

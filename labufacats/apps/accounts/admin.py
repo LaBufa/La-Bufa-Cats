@@ -1,6 +1,7 @@
 from django.contrib import admin
-
 from .models import Post
+from .models import Adocao
+
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
@@ -11,3 +12,4 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.site_header = 'La Bufa Cats'
 admin.site.site_title = 'La Bufa Cats'
+admin.site.register(Adocao)

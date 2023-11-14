@@ -6,6 +6,9 @@ from django.http import HttpResponseNotFound
 from django.views import View
 from django.views.generic import ListView, DetailView
 from .forms import UserForm
+from .forms import AdocaoForm
+from .models import Adocao
+from django.http import HttpResponseRedirect
 from .models import Post
 
 
@@ -34,6 +37,29 @@ class AdocaoView(DetailView):
     model = Post
     template_name = 'adocao.html'
     context_object_name = 'post'
+    
+def processar_formulario(request):
+    if request.method == 'POST':
+        form = AdocaoForm(request.POST)
+        if form.is_valid():
+            # Crie uma instância do modelo e salve os dados
+            adocao = Adocao(
+                nome=form.cleaned_data['nome'],
+                idade=form.cleaned_data['idade'],
+                email=form.cleaned_data['email'],
+                telefone=form.cleaned_data['telefone'],
+                motivacao=form.cleaned_data['motivacao'],
+                concordo=form.cleaned_data['concordo']
+            )
+            adocao.save()
+            messages.success(request, 'Formulário enviado com sucesso. Entraremos em contato com você via Email ou WhatsApp')
+            return redirect('accounts:index')
+
+    else:
+        form = AdocaoForm()
+
+    return render(request, 'accounts/adoção.html', {'form': form})
+
 
 class RifasView(View):
     def get(self, request):
