@@ -12,6 +12,7 @@ urlpatterns = [
     path('profile/', views.UserProfileView.as_view(), name='user_profile'),
     path('catalogo/', views.CatalogoView.as_view(), name='catalogo'),
     path('<int:pk>/', views.DetalhesView.as_view(), name='detalhes'),
+    path('<int:pk>/adocao', views.AdocaoView.as_view(), name='adocao'),
     path('index/', views.PrincipalView.as_view(), name='index'),
     path('rifas/', views.RifasView.as_view(), name='rifas'),
     path('doacao/', views.DoacaoView.as_view(), name='doacao'),

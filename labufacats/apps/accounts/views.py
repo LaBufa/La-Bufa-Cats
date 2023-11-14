@@ -29,6 +29,11 @@ class DetalhesView(DetailView):
     model = Post
     template_name = 'detalhes.html'
     context_object_name = 'post'
+    
+class AdocaoView(DetailView):
+    model = Post
+    template_name = 'adocao.html'
+    context_object_name = 'post'
 
 class RifasView(View):
     def get(self, request):
