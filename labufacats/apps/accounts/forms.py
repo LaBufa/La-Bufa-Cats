@@ -24,5 +24,5 @@ class AdocaoForm(forms.Form):
     idade = forms.CharField(max_length=20)
     email = forms.EmailField()
     telefone = forms.CharField(max_length=15)
-    motivacao = forms.CharField(widget=forms.Textarea)
+    motivacao = forms.CharField(widget=forms.Textarea, required=False)
     concordo = forms.BooleanField()
