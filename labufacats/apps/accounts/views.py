@@ -40,6 +40,7 @@ class AdocaoView(DetailView):
     context_object_name = 'post'
     
 def processar_formulario(request):
+    
     if request.method == 'POST':
         form = AdocaoForm(request.POST)
         if form.is_valid():
