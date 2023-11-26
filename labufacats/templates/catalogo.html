@@ -5,32 +5,27 @@
         <div class="row">
             {% for post in posts %}
             <div class="col-12 col-md-4 col-xl-4">
-
-
                 <div class="card" id="cardH1" style= "margin-top: 1rem;" style="object-fit: content;">
-                    <img src={{ post.img.url }} style="max-height: 17rem; max-width: 27rem; object-fit: content;">
-                    <div class="card-body">
-                        
-                        <li>
+                    <img src={{ post.img.url }} style="max-height: 17rem; max-width: 27rem; height: 17rem; object-fit: cover; border-radius: 10% 10% 0% 0%;">
+                    <div class="card-body" style="color: white; height: 14rem;">
                             <h2>{{ post.titulo_post }}</h2>
                             <p>{{ post.descricao_post }}</p>
-                            <a href="{% url 'accounts:detalhes' post.id %}" class="btn btn-primary">Detalhes</a>
-                        </li>
+                            <a href="{% url 'accounts:detalhes' post.id %}"> <button type="button" class="btn btn-success">Detalhes</button></a>
+                            <a href="{% url 'accounts:adocao' post.id %}"> <button type="button" class="btn btn-success">Me adote</button></a>
+                            <a href="#">
+                                <svg id="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16" style="color: white;">
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                </svg>
+                            </a>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">{{ post.data_post }}</small>
+                    <div class="card-footer" style="color: white;">
+                        <small class="">{{ post.data_post }}</small>
                     </div>
                 </div>
-
-
-
             </div>
             {% endfor %}
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 </body>
 
 </html>

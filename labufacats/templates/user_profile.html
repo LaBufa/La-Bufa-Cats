@@ -2,8 +2,36 @@
 {% load static %}
 {% block body %}
 
+{% if user.is_authenticated %}
 
+<div class="container" style="color: white;">
+    <div class="row">
+        <div class="col-12 col-md-4 col-lg-2">
+            <img src="{% static 'img/lacat2.ico' %}" alt="" style="width: 8.7rem;">
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-5">
+            <h5>Nome: {{ user.first_name }}</h5>
+            <h6>Nome de Usuario: {{ user.username }}</h6>
+            <h6>Email: {{ user.email }} </h6>
+            <h6>Sobre o Usuário: </h6>
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-5">
+            <h6>Minhas Rifas: </h6>
+            <h6>Gatos adotados: </h6>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-12">
+            <h1 style="display:flex; align-items:center; justify-content: center; color: white;">Seus gatos Favoritos</h1>
+        </div>
+    </div>
+</div>
+
+{% else %}
+<h1 style="display:flex; align-items:center; justify-content: center; color: white;">Oops . . . Você não está logado!</h1>
 </html>
-
+{% endif %}
 
 {% endblock %}

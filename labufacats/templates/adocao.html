@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+{% if user.is_authenticated %}
+<div class="container" style="color: white;">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-6">
+            <img src={{ post.img.url }} style="height: 17rem;">
+        </div>
+        <div class="col-12 col-md-6 col-lg-6">
+            <h3>Que legal!! Você está adotando o {{ post.titulo_post }}. Ao enviar o formulário, nossa equipe o analisará e entrará em contato com você para finalizarmos a adoção.</h3>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 1rem;">
+        <div class="col-12 col-md-12 col-lg-12">
+            <h1 class="mt-4">Formulário de Adoção</h1>
+
+    <form action="/processar_formulario/" method="post">
+        {% csrf_token %} {# Adicione esta linha para proteção contra CSRF #}
+
+    <div class="form-group">
+        <label for="nome"><h4>Qual seu nome completo ?</h4></label>
+        <input type="text" class="form-control" id="nome" name="nome" required>
+    </div>
+
+    <div class="form-group">
+        <label for="nome"><h4>Qual sua idade ?</h4></label>
+        <input type="text" class="form-control" id="idade" name="idade" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email"><h4>Qual seu E-mail para entrarmos em contato ?</h4></label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="telefone"><h4>Telefone:</h4></label>
+        <input type="number" class="form-control" id="telefone" name="telefone" required>
+    </div>
+
+    <div class="form-group">
+        <label for="motivacao"><h4>Motivo para Adoção:</h4></label>
+        <textarea class="form-control" id="motivacao" name="motivacao" required></textarea>
+    </div>
+
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="concordo" name="concordo" required>
+        <label class="form-check-label" for="concordo">Concordo com os termos</label>
+    </div>
+
+    <a href=""> <button type="submit" class="btn btn-primary">Enviar</button> </a>
+    </form>
+
+                </div>
+            </div>
+        </div>
+
+{% else %}
+        <h3 style="display: flex; align-items: center; justify-content: center; color: white;">Oops... Você precisa estar logado para fazer uma adoção</h3>
+{% endif %}
+    </body>
+</html>
+
+
+
+{% endblock %}
